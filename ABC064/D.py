@@ -9,7 +9,6 @@ for i in S:
     if i == '(':
         if toji > 0:
             output = '(' * toji + output
-            output += ')' * toji
             toji = 0
             hiraki += 1
             output += i
@@ -22,13 +21,9 @@ for i in S:
             output += i
         else:
             toji += 1
+            output += i
 
-for i in range(hiraki):
-    output += ')'
-
-for i in range(toji):
-    output += ')'
-
+output += ')' * hiraki
 output = '(' * toji + output
 
 print(output)
